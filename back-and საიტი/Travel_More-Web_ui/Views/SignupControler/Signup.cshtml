@@ -1,0 +1,67 @@
+﻿@using Models;
+@model User
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_SignupLoyout";
+}
+
+<header>
+    <div class="body">
+        <div class="background-one">
+            <div class="link-container">
+                <a id="one" class="link-one" asp-controller="HomePage" asp-action="homepage">Home</a>
+            </div>
+        </div>
+        <div class="background-two link-container">
+            <a id="two" class="link-two" asp-controller="Addritual" asp-action="Add">Upload Ritual</a>
+        </div>
+        <div class="background-three link-container">
+            <a id="three" class="link-three" asp-controller="SignupControler" asp-action="SignUp">SignUp</a>
+        </div>
+        <div class="background-one">
+            <div class="link-container">
+                <a id="four" class="link-one" asp-controller="LogIn" asp-action="Login">Login</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div   class="log">
+        <section class="register">
+            <aside class="top">
+                <h3>Sign Up</h3>
+            </aside>
+            <aside class="bottom">
+                <form method="post">
+                    <div class="mb-3">
+                        <label asp-for="FirstName" class="form-label"></label>
+                        <input asp-for="FirstName" class="form-control" id="name" />
+                        <span class="text-danger" asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="LastName" class="form-label"> </label>
+                        <input asp-for="LastName" class="form-control" id="lastname" />
+                        <span class="text-danger" asp-validation-for="LastName"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"> </label>
+                        <input asp-for="Email" class="form-control" id="email" />
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control" id="password" />
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-success" id="BTN" value="ავტორიზაცია" />
+                    </div>
+                </form>
+            </aside>
+        </section>
+    </div>
+</main>
+<script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js"></script>
+</script>

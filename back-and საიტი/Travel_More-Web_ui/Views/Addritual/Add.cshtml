@@ -1,0 +1,85 @@
+﻿@using Models;
+@model Posts
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_AddRitualLayout";
+}
+<div id="progress">
+    <span id="progress-value"></span>
+</div>
+
+<header>
+    <div class="body">
+        <div class="background-one">
+            <div class="link-container">
+                <a id="one" class="link-one" asp-controller="HomePage" asp-action="homepage">Home</a>
+            </div>
+        </div>
+        <div class="background-two link-container">
+            <a id="two" class="link-two" asp-controller="Addritual" asp-action="Add">Upload Ritual</a>
+        </div>
+        <div class="background-three link-container">
+            <a id="three" class="link-three" asp-controller="SignupControler" asp-action="SignUp">SignUp</a>
+        </div>
+        <div class="background-one">
+            <div class="link-container">
+                <a id="four" class="link-one" asp-controller="LogIn" asp-action="Login">Login</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="log1">
+        <section class="register1">
+            <aside class="top1">
+                <h3>Upload</h3>
+            </aside>
+            <aside class="bottom1">
+@*                <div asp-validation-summary="All" class="modal-dialog modal-fullscreen-sm-down">
+                </div>*@
+                <form method="post" enctype="multipart/form-data" >
+                    <div class="mb-3">
+                        <label asp-for="Title">სათაური</label>
+                        <input asp-for="Title" class="inputone" />
+                        <span asp-validation-for="Title" class="text-danger" ></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Location">ლოკაცია</label>
+                        <input asp-for="Location" class="inputtwo" />
+                        <span asp-validation-for="Location" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SearchAddress">საძიებო მისამართი</label>
+                        <input asp-for="SearchAddress" class="inputthree" />
+                        <span asp-validation-for="SearchAddress" class="text-danger"></span>
+
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Text" class="inputfour">ტექსტი(შინაარსი)</label>
+                        <input asp-for="Text" class="inputfour" />
+                        <span asp-validation-for="Text" class="text-danger"></span>
+
+                    </div>
+                    @*        <div   class="input-group">
+                    <textarea class="form-control inputfour"
+                    aria-label="With textarea"></textarea>
+                    </div>*@
+                    <div class="mb-3">
+                        <div  class="input-group">
+                            <input asp-for="ImgUrl" type="file"
+                                   class="form-control inputfive"
+                                   id="inputGroupFile04"
+                                   aria-describedby="inputGroupFileAddon04"
+                                   aria-label="Upload" />
+                        </div>
+                        <span asp-validation-for="ImgUrl" class="text-danger"></span>
+
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-success" id="BTN" value="ავტორიზაცია" />
+                    </div>
+                </form>
+            </aside>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,95 @@
+﻿@model List<Posts>
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_HomePageLayout";
+}
+
+
+<div id="progress">
+    <span id="progress-value"></span>
+</div>
+<header>
+    <div class="body">
+        <div class="background-one">
+            <div class="link-container">
+                <a id="one" class="link-one" asp-controller="HomePage" asp-action="homepage">Home</a>
+            </div>
+        </div>
+        <div class="background-two link-container">
+            <a id="two" class="link-two" asp-controller="Addritual" asp-action="Add">Upload Ritual</a>
+        </div>
+        <div class="background-three link-container">
+            <a id="three" class="link-three" asp-controller="SignupControler" asp-action="SignUp">SignUp</a>
+        </div>
+        <div class="background-one">
+            <div class="link-container">
+                <a id="four" class="link-one" asp-controller="LogIn" asp-action="Login">Login</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="card">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="277076859_4940118176074688_1509575265686576901_n.jpg"
+                     alt="Avatar" />
+            </div>
+            <div class="flip-card-back">
+                <div class="title">
+                    <h1> luka</h1>
+                </div>
+                <div class="text">
+                    <p>
+                       asasasasasasas
+                    </p>
+                </div>
+                <div class="contact">
+                    <p>
+                        <i class="fa-brands fa-wikipedia-w"></i>
+                        asasas
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-location-pin three"></i>
+                        Location: aasasas
+                    </p>
+                    <p><i class="fa-solid fa-clock"></i>6/10/2023 10:03:06 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@foreach (var item in Model)
+{
+    <div class="card">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="@item.ImgUrl"
+                         alt="Avatar" />
+                </div>
+                <div class="flip-card-back">
+                    <div class="title">
+                        <h1> @item.Title</h1>
+                    </div>
+                    <div class="text">
+                        <p>
+                            @item.Text
+                        </p>
+                    </div>
+                    <div class="contact">
+                        <p>
+                            <i class="fa-brands fa-wikipedia-w"></i>
+                            @item.SearchAddress
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-location-pin three"></i>
+                            Location: @item.Location
+                        </p>
+                        <p><i class="fa-solid fa-clock"></i> @item.Datetime </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
